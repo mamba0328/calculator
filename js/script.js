@@ -11,8 +11,10 @@ const bottomButtons = document.querySelector('#numberButtons'); //takes a div wi
 const numberButton = bottomButtons.querySelectorAll('button') //takes each button from that div
 const screen = document.getElementById('screen')
 const button1 = document.querySelector('#dot')
+let variants = '';  // this variable help to use operators
 
 let valueOnScreen = '';  
+let nextValue = ''; //value witch will be called with an operators 
 
 numberButton.forEach((button) => { 
  button.addEventListener('click', function() {
@@ -47,7 +49,71 @@ neg.addEventListener('click', () => {
 //changes input value to percantages 
 const percentage = document.getElementById('percentage');
 percentage.addEventListener('click', () => { 
-    valueOnScreen = parseInt(valueOnScreen)/100; 
+    valueOnScreen = parseFloat(valueOnScreen)/100; 
     valueOnScreen = valueOnScreen.toString();
     screen.innerText = valueOnScreen;
 });
+
+//making operatorButtons functional
+//evry time when you click on operator, variants variable
+//changes to be cheked later to apply a function
+
+const addition = document.getElementById('plus'); 
+
+addition.addEventListener('click', () => { 
+    nextValue = parseFloat(valueOnScreen, 10);
+    valueOnScreen = ''; 
+    variants = '+';
+    screen.innerText = nextValue;
+})
+
+
+const minus = document.getElementById('minus'); 
+
+minus.addEventListener('click', () => { 
+    nextValue = parseFloat(valueOnScreen);
+    valueOnScreen = ''; 
+    variants = '-';
+    screen.innerText = nextValue;
+})
+
+const muliply = document.getElementById('muliply'); 
+
+muliply.addEventListener('click', () => { 
+    nextValue = parseFloat(valueOnScreen);
+    valueOnScreen = ''; 
+    variants = '*';
+    screen.innerText = nextValue;
+})
+
+const division = document.getElementById('division'); 
+
+division.addEventListener('click', () => { 
+    nextValue = parseFloat(valueOnScreen);
+    valueOnScreen = ''; 
+    variants = '/';
+    screen.innerText = nextValue;
+})
+
+const equal = document.getElementById('equal') 
+equal.addEventListener('click', () => { 
+    if (variants === '+') { 
+        valueOnScreen = parseFloat(valueOnScreen) + nextValue; 
+        variants = '';
+    }
+    if (variants === '-') { 
+        valueOnScreen = nextValue - parseFloat(valueOnScreen); 
+        variants = '';
+    }
+    if (variants === '*') { 
+        valueOnScreen = parseFloat(valueOnScreen) * nextValue;
+        variants = ''; 
+    }
+    if (variants === '/') { 
+        valueOnScreen =  nextValue/parseFloat(valueOnScreen); 
+        variants = '';
+    }
+
+    valueOnScreen = valueOnScreen.toString();
+    screen.innerText = valueOnScreen;
+})
