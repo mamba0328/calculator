@@ -21,6 +21,10 @@ button {
     width: 95%;
     height: 20%;
     margin: 0 1em ;
+    text-align: right;
+    font-size: 3.3em;
+    color: rgb(255, 255, 255);
+    background-color: rgb(87, 228, 94);
 }
 
 #container {
@@ -31,7 +35,7 @@ button {
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-
+    background-color: slategray;
 }
 
 #bottomSection { 
@@ -53,3 +57,4 @@ button {
 .zero { 
     width: 10.4em;
 }
+
