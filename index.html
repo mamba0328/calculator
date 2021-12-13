@@ -5,16 +5,25 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/style.css">
         <script src="js/script.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+
     </head>
     <body>
         <div id='container'>
             <div id='screen'></div>
        
-         <div id='bottomSection'>
-            <div id='Buttons'>
+         <div id='buttonsSection'>
+            <div id='leftButtons'>
+
+            <div>
                <button id='MC'>MC</button>
+               <button id='backspace'>AC</button>
                <button id='negative'>+/-</button>
-               <button id='percentage'>%</button>
+               
+            </div>
+
              <div id='numberButtons'>
                <button id='7'>7</button>
                <button id='8'>8</button>
@@ -25,18 +34,24 @@
                <button id='1'>1</button>
                <button id='2'>2</button>
                <button id='3'>3</button>
-               <button id='0', class="zero">0</button>
-               <button id='.'>.</button>
+               
+             </div>
+             <div>
+             <button id='0', class="zero">0</button>
+             <button id='.'>.</button>
+             <button id='equal'>=</button>
              </div>
             </div> 
 
+            
             <div id='operatorButtons'>
+                <button id='percentage'>%</button>
                 <button id='plus'>+</button>
                 <button id='minus'>-</button>
                 <button id='muliply'>х</button>
                 <button id='division'>/</button>
-                 <button id='equal'>=</button>
             </div>
+
          </div>
         </div>
     </body>
